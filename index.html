@@ -19,8 +19,13 @@
     .container {
       max-width: 600px;
       padding: 40px;
+      display: none;
       opacity: 0;
       animation: fadeIn 2s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
     }
 
     h1 {
@@ -41,43 +46,43 @@
       opacity: 0.8;
     }
 
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
+    .denied {
+      font-size: 24px;
     }
   </style>
 </head>
 <body>
 
-  <script>
-    const password = "ARVA";
-    const userInput = prompt("Enter the password:");
+<div class="container" id="content">
+  <h1>I Needed To Say This</h1>
 
-    if (userInput !== password) {
-      document.body.innerHTML = "<h2 style='font-family: Georgia, serif; text-align:center; margin-top:20%;'>Access Denied.</h2>";
-    }
-  </script>
+  <p>I know I messed up. I've been thinking about it a lot.</p>
 
-  <div class="container">
-    <h1>I Needed To Say This</h1>
+  <p>
+    I really like you. I admire you more than I ever properly showed.
+    The way you think, the way you care, the way you exist in the world.
+  </p>
 
-    <p>I know I messed up. I've been thinking about it a lot.</p>
+  <p>
+    I handled things badly. That's on me. And I'm genuinely sorry.
+  </p>
 
-    <p>
-      I really like you. I admire you more than I ever properly showed.
-      The way you think, the way you care, the way you exist in the world.
-    </p>
+  <p class="end">
+    I don’t expect anything.  
+    I just didn’t want silence to be the last thing between us.
+  </p>
+</div>
 
-    <p>
-      I handled things badly. That's on me. And I'm genuinely sorry.
-    </p>
+<script>
+  const password = "ARVA";
+  const userInput = prompt("Enter the password:");
 
-    <p class="end">
-      I don’t expect anything.  
-      I just didn’t want silence to be the last thing between us.
-    </p>
-  </div>
+  if (userInput === password) {
+    document.getElementById("content").style.display = "block";
+  } else {
+    document.body.innerHTML = "<div class='denied'>Access Denied.</div>";
+  }
+</script>
 
 </body>
 </html>
