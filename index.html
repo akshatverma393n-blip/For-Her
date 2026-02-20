@@ -5,16 +5,11 @@
   <style>
     body {
       margin: 0;
-      padding: 0;
+      padding: 40px 20px;
       font-family: 'Georgia', serif;
       background: #f8f5f2;
       color: #333;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
       text-align: center;
-      flex-direction: column;
     }
 
     .hidden {
@@ -22,10 +17,14 @@
     }
 
     .container {
-      max-width: 600px;
-      padding: 40px;
+      max-width: 700px;
+      margin: 0 auto;
       opacity: 0;
       animation: fadeIn 2s ease forwards;
+    }
+
+    .gift-section {
+      margin-top: 20vh;
     }
 
     .gift-box {
@@ -46,18 +45,18 @@
 
     h1 {
       font-weight: normal;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
       letter-spacing: 1px;
     }
 
     p {
-      line-height: 1.8;
-      margin-bottom: 20px;
+      line-height: 1.9;
+      margin-bottom: 24px;
       font-size: 18px;
     }
 
     .end {
-      margin-top: 40px;
+      margin-top: 50px;
       font-style: italic;
       opacity: 0.8;
     }
@@ -67,19 +66,22 @@
     }
 
     .denied {
+      margin-top: 40vh;
       font-size: 24px;
     }
   </style>
 </head>
 <body>
 
-<div id="giftSection" class="hidden">
+<div id="giftSection" class="gift-section hidden">
   <div class="gift-box" onclick="openSurprise()">🎁</div>
   <div class="surprise-text">A small surprise</div>
 </div>
 
 <div class="container hidden" id="content">
   <h1>Akriti, I Needed To Say This</h1>
+
+  <!-- YOUR MESSAGE (unchanged) -->
 
   <p>
     Akriti, I know probably I am the last person jiska tu message expect kar rahi hogi.
@@ -162,4 +164,3 @@
 
 </body>
 </html>
-
